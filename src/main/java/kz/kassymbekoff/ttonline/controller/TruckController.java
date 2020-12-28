@@ -64,6 +64,22 @@ public class TruckController {
         return ResponseEntity.ok(result);
     }
 
+    @DeleteMapping("/trucks/{id}")
+    public ResponseEntity<Map<String, Object>> delete(@PathVariable(value = "id") Long id){
+        Map<String, Object> result = new HashMap<>();
+        truckService.deleteById(id);
+        result.put("status", HttpStatus.OK.value());
+        return ResponseEntity.ok(result);
+    }
+
+    @DeleteMapping("/trucks")
+    public ResponseEntity<Map<String, Object>> deleteAll(){
+        Map<String, Object> result = new HashMap<>();
+        truckService.deleteAll();
+        result.put("status", HttpStatus.OK.value());
+        return ResponseEntity.ok(result);
+    }
+
 
 
 

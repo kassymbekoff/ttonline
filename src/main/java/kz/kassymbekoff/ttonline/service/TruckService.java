@@ -39,4 +39,12 @@ public class TruckService {
         oldTruck.get().setPrice(truck.getPrice());
         return truckRepository.save(oldTruck.get());
     }
+
+    public void deleteById(Long id){
+        truckRepository.deleteById(id);
+    }
+
+    public void deleteAll(){
+        truckRepository.deleteAll();
+    }
 }
